@@ -1,0 +1,13 @@
+image: maven:3.8-openjdk-17
+
+stages:
+  - build
+
+before_script:
+  - echo "Using Java version:"
+  - java -version
+
+build:
+  stage: build
+  script:
+    - mvn clean compile -DskipTests
