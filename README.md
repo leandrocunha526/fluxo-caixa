@@ -10,7 +10,7 @@ Desenvolvido com:
 - Docker
 - IDE Intellij IDEA Ultimate
 - ORM: JPA (Java Persistence API)
-- Framework: Spring Boot 3.4.5.
+- Framework: Spring Boot 3.4.5. See [Spring Boot 3.4.5 available now in April 24, 2025 by  Andy Wilkinson](https://spring.io/blog/2025/04/24/spring-boot-3-4-5-available-now)
 - Padrão de projeto: MVC.
 
 Sendo organizado com:  
