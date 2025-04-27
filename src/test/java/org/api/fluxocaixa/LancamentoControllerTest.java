@@ -157,7 +157,7 @@ public class LancamentoControllerTest {
 
         when(lancamentoService.buscarPorData(LocalDate.of(2025, 4, 24))).thenReturn(lancamentos);
 
-        mockMvc.perform(get("/api/lancamento/data")
+        mockMvc.perform(get("/api/lancamento")
                         .param("data", "2025-04-24")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
