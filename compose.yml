@@ -1,0 +1,38 @@
+services:
+  mysql:
+    image: "mysql:latest"
+    container_name: mysql
+    environment:
+      - MYSQL_DATABASE=fluxo_caixa
+      - MYSQL_ROOT_PASSWORD=admin12345
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysqldata:/var/lib/mysql
+    networks:
+      - backend
+
+  app:
+    image: "openjdk:21-slim"
+    container_name: spring-app
+    depends_on:
+      - mysql
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: ["./mvnw", "spring-boot:run"]
+    networks:
+      - backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/fluxo_caixa
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: admin12345
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+
+volumes:
+  mysqldata:
+
+networks:
+  backend:
