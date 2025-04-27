@@ -1,4 +1,4 @@
-package org.api.fluxocaixa.dtos;
+package org.api.fluxocaixa.dto;
 
 import lombok.*;
 

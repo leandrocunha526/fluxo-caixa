@@ -1,9 +1,9 @@
-package org.api.fluxocaixa.services;
+package org.api.fluxocaixa.service;
 
 import lombok.RequiredArgsConstructor;
-import org.api.fluxocaixa.dtos.SaldoDiarioDTO;
-import org.api.fluxocaixa.models.Lancamento;
-import org.api.fluxocaixa.repositories.LancamentoRepository;
+import org.api.fluxocaixa.dto.SaldoDiarioDTO;
+import org.api.fluxocaixa.model.Lancamento;
+import org.api.fluxocaixa.repository.LancamentoRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;

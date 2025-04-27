@@ -1,4 +1,4 @@
-package org.api.fluxocaixa.models;
+package org.api.fluxocaixa.model;
 
 import jakarta.persistence.*;
 import lombok.*;

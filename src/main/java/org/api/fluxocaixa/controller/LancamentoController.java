@@ -1,10 +1,10 @@
-package org.api.fluxocaixa.controllers;
+package org.api.fluxocaixa.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.api.fluxocaixa.dtos.SaldoDiarioDTO;
-import org.api.fluxocaixa.models.Lancamento;
-import org.api.fluxocaixa.services.LancamentoService;
+import org.api.fluxocaixa.dto.SaldoDiarioDTO;
+import org.api.fluxocaixa.model.Lancamento;
+import org.api.fluxocaixa.service.LancamentoService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

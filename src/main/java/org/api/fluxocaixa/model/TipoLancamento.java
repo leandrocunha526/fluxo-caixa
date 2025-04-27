@@ -1,4 +1,4 @@
-package org.api.fluxocaixa.models;
+package org.api.fluxocaixa.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -25,6 +25,6 @@ public enum TipoLancamento {
                 return type;
             }
         }
-        throw new IllegalArgumentException("Tipo inválido: " + value);
+        throw new IllegalArgumentException("Tipo inválido: " + value + ". NOTE: Aceita `Crédito` ou `Débito`. ");
     }
 }
