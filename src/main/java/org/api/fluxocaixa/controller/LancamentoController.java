@@ -110,7 +110,7 @@ public class LancamentoController {
         }
     }
 
-    @GetMapping("/lancamento/data")
+    @GetMapping("/lancamento")
     @Operation(summary = "Listar todos os lançamentos por data")
     public ResponseEntity<?> buscarPorData(@RequestParam("data") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate data) {
         try {
