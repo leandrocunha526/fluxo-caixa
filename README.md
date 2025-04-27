@@ -4,7 +4,7 @@
 
 Desenvolvido com:
 
-- MariaDB (mas possui possibilidade de conectar com MySQL apenas alterando jdbc:mariadb://localhost:3306 para jdbc:mysql://localhost:3306)
+- [MySQL](https://www.oracle.com/br/mysql/what-is-mysql/) (e seria possível usar com MariaDB também fazendo as alterações necessárias. Mas a dependência para MariaDB via Maven já foi adicionada.)
 - Java JDK 21 (LTS)
 - Maven (MVN)
 - Docker
@@ -64,7 +64,7 @@ ou
 
 ## Docs
 
-Você pode conferir as documentações das rotas e realizar requisições em http://localhost:8080/swagger-ui/index.html.
+Você pode conferir as documentações das rotas e realizar requisições em <http://localhost:8080/swagger-ui/index.html>.
 
 ## Abordagens
 
@@ -80,15 +80,3 @@ Portanto, o uso de BigDecimal assegura:
 - Precisão nas operações de soma, subtração, multiplicação e divisão.
 - Controle explícito do número de casas decimais.
 - Arredondamento seguro e previsível para o contexto financeiro.
-
-### Routes
-
-| Método | URL                             | Ação                              |
-|--------|---------------------------------|-----------------------------------|
-| POST   | /api/criar                      | Inserir um novo lançamento        |
-| PUT    | /api/lancamento/{id}            | Atualizar um lançamento existente |
-| GET    | /api/lancamentos                | Listar todos os lançamentos       |
-| GET    | /api/lancamento/{id}            | Buscar um lançamento pelo ID      |
-| DELETE | /api/delete/{id}                | Deletar um lançamento             |
-| GET    | /api/lancamento?data=2025-04-23 | Buscar lançamentos por data       |
-| GET    | /api/saldo                      | Mostra o saldo diário             |
