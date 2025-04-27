@@ -52,15 +52,15 @@ ou
 ./mvnw test
 ```
 
-| **Teste**                    | **Objetivo**                                | **Descrição**                                                                                            |
-|:-----------------------------|:--------------------------------------------|:---------------------------------------------------------------------------------------------------------|
-| `testCriarLancamentos`       | Testar a criação de lançamentos.            | Verifica se a API cria corretamente diferentes lançamentos (crédito e débito) via `POST /api/criar`.     |
-| `testConsultarSaldo`         | Testar a consulta de saldo diário.          | Verifica se a API retorna o saldo consolidado diário corretamente via `GET /api/saldo`.                  |
-| `testPesquisarPorData`       | Testar a pesquisa de lançamentos por data.  | Verifica se a API retorna lançamentos de uma data específica via `GET /api/lancamentos/data/{data}`.     |
-| `testListarTodosLancamentos` | Testar a listagem de todos os lançamentos.  | Verifica se a API retorna todos os lançamentos cadastrados via `GET /api/lancamentos`.                   |
-| `testBuscarLancamentoPorId`  | Testar a busca de lançamento por ID.        | Verifica se a API retorna corretamente um lançamento específico pelo ID via `GET /api/lancamentos/{id}`. |
-| `testEditarLancamento`       | Testar a edição de um lançamento existente. | Verifica se a API atualiza um lançamento existente corretamente via `PUT /api/lancamentos/{id}`.         |
-| `testRemoverLancamento`      | Testar a remoção de um lançamento.          | Verifica se a API remove corretamente um lançamento via `DELETE /api/delete/{id}`.                       |
+| **Teste**                    | **Objetivo**                                | **Descrição**                                                                                                     |
+|:-----------------------------|:--------------------------------------------|:------------------------------------------------------------------------------------------------------------------|
+| `testCriarLancamentos`       | Testar a criação de lançamentos.            | Verifica se a API cria corretamente diferentes lançamentos (crédito e débito) via `POST /api/criar`.              |
+| `testConsultarSaldo`         | Testar a consulta de saldo diário.          | Verifica se a API retorna o saldo consolidado diário corretamente via `GET /api/saldo`.                           |
+| `testPesquisarPorData`       | Testar a pesquisa de lançamentos por data.  | Verifica se a API retorna lançamentos de uma data específica via `GET /api/lancamento?data=2025-04-23` (exemplo). |
+| `testListarTodosLancamentos` | Testar a listagem de todos os lançamentos.  | Verifica se a API retorna todos os lançamentos cadastrados via `GET /api/lancamentos`.                            |
+| `testBuscarLancamentoPorId`  | Testar a busca de lançamento por ID.        | Verifica se a API retorna corretamente um lançamento específico pelo ID via `GET /api/lancamento/{id}`.           |
+| `testEditarLancamento`       | Testar a edição de um lançamento existente. | Verifica se a API atualiza um lançamento existente corretamente via `PUT /api/lancamento/{id}`.                   |
+| `testRemoverLancamento`      | Testar a remoção de um lançamento.          | Verifica se a API remove corretamente um lançamento via `DELETE /api/delete/{id}`.                                |
 
 ## Docs
 
