@@ -1,5 +1,9 @@
 # Lançamentos API - Spring Boot
 
+## Sobre
+
+Controle de fluxo de caixa diário, com lançamentos de débitos e créditos. Além da possibilidade de consultar o saldo consolidado por dia, por meio de um endpoint que retorne os dados e em formato JSON.
+
 ## Requerimentos
 
 Desenvolvido com:
