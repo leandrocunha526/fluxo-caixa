@@ -14,8 +14,8 @@ Desenvolvido com:
 - Docker
 - IDE Intellij IDEA Ultimate
 - ORM: JPA (Java Persistence API)
-- Framework: Spring Boot 3.4.5. See [Spring Boot 3.4.5 available now in April 24, 2025 by  Andy Wilkinson](https://spring.io/blog/2025/04/24/spring-boot-3-4-5-available-now)
-- Padrão de projeto: MVC.
+- Framework: Spring Boot 3.4.5. See [Spring Boot 3.4.5 available now in April 24, 2025 by Andy Wilkinson](https://spring.io/blog/2025/04/24/spring-boot-3-4-5-available-now)
+- Padrão de projeto: MVC.  
 
 Sendo organizado com:  
 Model → representa as entidades de negócio, por exemplo a classe Lancamento.java.  
@@ -66,7 +66,12 @@ ou
 | `testEditarLancamento`       | Testar a edição de um lançamento existente. | Verifica se a API atualiza um lançamento existente corretamente via `PUT /api/lancamento/{id}`.                   |
 | `testRemoverLancamento`      | Testar a remoção de um lançamento.          | Verifica se a API remove corretamente um lançamento via `DELETE /api/delete/{id}`.                                |
 
-## Docs
+
+## Demonstração da execução dos testes
+
+![Captura de tela de Intellij IDEA](.github/images/screenshotintellij.png)
+
+## Swagger
 
 Você pode conferir as documentações das rotas e realizar requisições em <http://localhost:8080/swagger-ui/index.html>.
 
@@ -84,3 +89,11 @@ Portanto, o uso de BigDecimal assegura:
 - Precisão nas operações de soma, subtração, multiplicação e divisão.
 - Controle explícito do número de casas decimais.
 - Arredondamento seguro e previsível para o contexto financeiro.
+
+## Docs
+
+- [BigDecimal and BigInteger in Java By Baeldung](https://www.baeldung.com/java-bigdecimal-biginteger)
+- [MySQL: Entendendo o que é e como é usado by Oracle](https://www.oracle.com/br/mysql/what-is-mysql/)
+- [Maven Central Repository - Lombok](https://mvnrepository.com/search?q=lombok)
+- [TESTS: Spring MVC Test Framework - MockMVC](https://docs.spring.io/spring-framework/reference/6.0/testing/spring-mvc-test-framework.html)
+- [Spring Boot 3.4.5 available now in April, 24](https://spring.io/blog/2025/04/24/spring-boot-3-4-5-available-now)
