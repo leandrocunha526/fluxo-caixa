@@ -17,14 +17,16 @@ Desenvolvido com:
 - IDE Intellij IDEA Ultimate
 - ORM: JPA (Java Persistence API)
 - Framework: Spring Boot 3.4.5. See [Spring Boot 3.4.5 available now in April 24, 2025 by Andy Wilkinson](https://spring.io/blog/2025/04/24/spring-boot-3-4-5-available-now)
-- Padrão de projeto: MVC.  
+- Padrão de projeto: MVC  
 
-Sendo organizado com:  
+Sendo organizado em pacotes dentro de `src/main/org.api.fluxocaixa` com:  
 Model → representa as entidades de negócio, por exemplo a classe Lancamento.java.  
 Repository → faz a comunicação com o banco de dados.  
 Service → contém a lógica de negócio (processamento, cálculos, regras).  
-Controller → expõe os endpoints HTTP (API REST).  
+Controller → expõe os endpoints HTTP (API REST) e realiza tratamento de exceções.  
 DTO → classes para transportar dados (SaldoDiarioDTO.java).  
+Config -> classe de configuração do Swagger (SwaggerConfig.java).  
+Mas pode possuir outras configurações como `CorsConfig.java`, se necessário.
 
 ## Execução
 
