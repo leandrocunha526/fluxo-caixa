@@ -1,5 +1,7 @@
 # Lançamentos API - Spring Boot
 
+[![CI with Java 21 and MySQL](https://github.com/leandrocunha526/fluxo-caixa/actions/workflows/maven.yml/badge.svg)](https://github.com/leandrocunha526/fluxo-caixa/actions/workflows/maven.yml)
+
 ## Sobre
 
 Controle de fluxo de caixa diário, com lançamentos de débitos e créditos. Além da possibilidade de consultar o saldo consolidado por dia, por meio de um endpoint que retorne os dados e em formato JSON.
@@ -97,3 +99,4 @@ Portanto, o uso de BigDecimal assegura:
 - [Maven Central Repository - Lombok](https://mvnrepository.com/search?q=lombok)
 - [TESTS: Spring MVC Test Framework - MockMVC](https://docs.spring.io/spring-framework/reference/6.0/testing/spring-mvc-test-framework.html)
 - [Spring Boot 3.4.5 available now in April, 24](https://spring.io/blog/2025/04/24/spring-boot-3-4-5-available-now)
+- [Difference Between “mvn verify” and “mvn test”](https://www.baeldung.com/maven-verify-vs-test)
