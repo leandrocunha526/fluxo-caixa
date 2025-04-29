@@ -146,7 +146,8 @@ public class LancamentoControllerTest {
                                 .andExpect(status().isOk())
                                 .andExpect(jsonPath("$.id").value(1))
                                 .andExpect(jsonPath("$.descricao").value("Lançamento de crédito atualizado"))
-                                .andExpect(jsonPath("$.valor").value(600.00));
+                                .andExpect(jsonPath("$.valor").value(600.00))
+                                .andExpect(jsonPath("$.tipo").value("CREDITO"));
         }
 
         @Test
@@ -170,7 +171,7 @@ public class LancamentoControllerTest {
                                 .andExpect(jsonPath("$[0].descricao").value("Lançamento exemplo"))
                                 .andExpect(jsonPath("$[0].valor").value(300.00))
                                 .andExpect(jsonPath("$[0].data").value("2025-04-24"))
-                                .andExpect(jsonPath("$[0].tipo").value("Crédito"));
+                                .andExpect(jsonPath("$[0].tipo").value("CREDITO"));
         }
 
         @Test
@@ -195,9 +196,18 @@ public class LancamentoControllerTest {
 
                 mockMvc.perform(get("/api/lancamentos")
                                 .contentType(MediaType.APPLICATION_JSON))
-                                .andExpect(status().isOk())
-                                .andExpect(jsonPath("$[0].id").value(1))
-                                .andExpect(jsonPath("$[1].id").value(2));
+                        .andExpect(status().isOk())
+                        .andExpect(jsonPath("$.length()").value(2))
+                        .andExpect(jsonPath("$[0].id").value(1))
+                        .andExpect(jsonPath("$[0].descricao").value("Primeiro lançamento"))
+                        .andExpect(jsonPath("$[0].valor").value(100.00))
+                        .andExpect(jsonPath("$[0].data").value("2025-04-22"))
+                        .andExpect(jsonPath("$[0].tipo").value("CREDITO"))
+                        .andExpect(jsonPath("$[1].id").value(2))
+                        .andExpect(jsonPath("$[1].descricao").value("Segundo lançamento"))
+                        .andExpect(jsonPath("$[1].valor").value(200.00))
+                        .andExpect(jsonPath("$[1].data").value("2025-04-23"))
+                        .andExpect(jsonPath("$[1].tipo").value("DEBITO"));
         }
 
         @Test
@@ -215,7 +225,9 @@ public class LancamentoControllerTest {
                                 .contentType(MediaType.APPLICATION_JSON))
                                 .andExpect(status().isOk())
                                 .andExpect(jsonPath("$.id").value(1))
-                                .andExpect(jsonPath("$.descricao").value("Buscar lançamento por ID"));
+                                .andExpect(jsonPath("$.descricao").value("Buscar lançamento por ID"))
+                                .andExpect(jsonPath("$.data").value("2025-04-24"))
+                                .andExpect(jsonPath("$.tipo").value("CREDITO"));
         }
 
         @Test

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import jakarta.validation.constraints.*;
 
 @Entity
 @Data
@@ -16,16 +17,17 @@ public class Lancamento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @Column(nullable= false)
+    @NotNull(message = "A data do lançamento é obrigatória")
     private LocalDate data;
 
+    @NotNull(message = "O tipo de lançamento (CREDITO/DEBITO) é obrigatório")
     @Enumerated(EnumType.STRING)
-    @Column(nullable= false)
     private TipoLancamento tipo;
 
-    @Column(nullable= false)
+    @NotNull(message = "O valor é obrigatório")
+    @DecimalMin(value = "0.01", message = "O valor (R$) deve ser maior que zero")
     private BigDecimal valor;
 
-    @Column(length = 200)
+    @Size(max = 200, message = "A descrição pode ter no máximo 200 caracteres")
     private String descricao;
 }
