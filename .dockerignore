@@ -1,0 +1,23 @@
+# Ignora a pasta do Maven
+target/
+
+# Git
+.git
+.gitignore
+
+# Dockerfiles e Compose (opcional, se não quiser copiar eles)
+compose.yml
+.dockerignore
+
+# IDEs
+*.iml
+.idea/
+.vscode/
+
+# Outros
+*.log
+*.tmp
+*.bak
+*.swp
+*.DS_Store
+
