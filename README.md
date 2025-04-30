@@ -6,6 +6,8 @@
 
 Controle de fluxo de caixa diário, com lançamentos de débitos e créditos. Além da possibilidade de consultar o saldo consolidado por dia, por meio de um endpoint que retorne os dados e em formato JSON.
 
+[Front-end repository](https://github.com/leandrocunha526/fluxo-caixa-react)
+
 ## Requerimentos
 
 Desenvolvido com:
@@ -13,10 +15,10 @@ Desenvolvido com:
 - [MySQL](https://www.oracle.com/br/mysql/what-is-mysql/) (e seria possível usar com MariaDB também fazendo as alterações necessárias. Mas a dependência para MariaDB via Maven já foi adicionada.)
 - Java JDK 21 (LTS)
 - Maven (MVN)
-- Docker
+- Docker e Docker Compose
 - IDE Intellij IDEA Ultimate
 - ORM: JPA (Java Persistence API)
-- Framework: Spring Boot 3.4.5. See [Spring Boot 3.4.5 available now in April 24, 2025 by Andy Wilkinson](https://spring.io/blog/2025/04/24/spring-boot-3-4-5-available-now)
+- Framework: Spring Boot 3.4.5. See [Spring Boot 3.4.5 available now on April 24, 2025 by Andy Wilkinson](https://spring.io/blog/2025/04/24/spring-boot-3-4-5-available-now)
 - Padrão de projeto: MVC  
 
 Sendo organizado em pacotes dentro de `src/main/org.api.fluxocaixa` com:  
@@ -25,8 +27,7 @@ Repository → faz a comunicação com o banco de dados.
 Service → contém a lógica de negócio (processamento, cálculos, regras).  
 Controller → expõe os endpoints HTTP (API REST) e realiza tratamento de exceções.  
 DTO → classes para transportar dados (SaldoDiarioDTO.java).  
-Config -> classe de configuração do Swagger (SwaggerConfig.java).  
-Mas pode possuir outras configurações como `CorsConfig.java`, se necessário.
+Config -> classes de configurações do Swagger e para configurações de CORS (`SwaggerConfig.java`, `SecurityConfig.java` e `CorsConfig.java`).  
 
 ## Execução
 
@@ -60,6 +61,8 @@ ou
 ./mvnw test
 ```
 
+### Mock MVC
+
 | **Teste**                    | **Objetivo**                                | **Descrição**                                                                                                     |
 |:-----------------------------|:--------------------------------------------|:------------------------------------------------------------------------------------------------------------------|
 | `testCriarLancamentos`       | Testar a criação de lançamentos.            | Verifica se a API cria corretamente diferentes lançamentos (crédito e débito) via `POST /api/criar`.              |
@@ -74,6 +77,16 @@ ou
 ## Demonstração da execução dos testes
 
 ![Captura de tela de Intellij IDEA](.github/images/screenshotintellij.png)
+
+### Inject Mocks
+
+| **Testes**                                         | **Descrição**                                                                                                                                                               | **Regra de Negócio Avaliada**                                                                              |
+|----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| `deveCalcularSaldoDiarioCorretamente`              | Testa o cálculo do saldo diário, considerando a soma de créditos e débitos. Neste caso, o saldo final é a diferença entre créditos e débitos.                               | Verificar se o cálculo do saldo final está correto (total de créditos - total de débitos).                 |
+| `deveRetornarSaldoVazioQuandoNaoHouverLancamentos` | Testa o cenário onde não existem lançamentos para uma data específica. O saldo final deve ser vazio ou zero.                                                                | Verificar o comportamento quando não há lançamentos (não deve gerar erro, e o saldo final deve ser vazio). |
+| `deveListarApenasCreditosPorData`                  | Testa a filtragem de lançamentos para listar apenas os créditos em uma data específica. O método `buscarPorData()` deve retornar apenas os lançamentos de tipo **CREDITO**. | Validar a filtragem correta de lançamentos por tipo (somente **CREDITO**).                                 |
+
+__Total de testes automatizados realizados: 10__ 
 
 ## Swagger
 
@@ -102,3 +115,5 @@ Portanto, o uso de BigDecimal assegura:
 - [TESTS: Spring MVC Test Framework - MockMVC](https://docs.spring.io/spring-framework/reference/6.0/testing/spring-mvc-test-framework.html)
 - [Spring Boot 3.4.5 available now in April, 24](https://spring.io/blog/2025/04/24/spring-boot-3-4-5-available-now)
 - [Difference Between “mvn verify” and “mvn test”](https://www.baeldung.com/maven-verify-vs-test)
+- [Mockito @InjectMocks Mocks Dependency Injection](https://www.digitalocean.com/community/tutorials/mockito-injectmocks-mocks-dependency-injection)
+- [Unit Testing](https://docs.spring.io/spring-framework/reference/testing/unit.html)
