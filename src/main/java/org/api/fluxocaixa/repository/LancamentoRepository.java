@@ -10,6 +10,7 @@ import java.util.List;
 
 public interface LancamentoRepository extends JpaRepository<Lancamento, Long> {
 
+    @SuppressWarnings("JpaQlInspection")
     @Query("SELECT new org.api.fluxocaixa.dto.SaldoDiarioDTO(" +
             "l.data, " +
             "SUM(CASE WHEN l.tipo = 'CREDITO' THEN l.valor ELSE 0 END), " +
